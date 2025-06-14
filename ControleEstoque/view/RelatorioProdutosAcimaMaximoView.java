@@ -9,7 +9,7 @@ package com.projeto.controleestoque.view;
  * Exibe uma tabela com todos os produtos cujo estoque está acima da quantidade máxima definida.
  * Os dados são carregados do banco de dados através do ProdutoDAO.
  * 
- * @author Ruts
+ * @author Marcos Antonio Gasperin
  */
 
 import com.projeto.controleestoque.dao.ProdutoDAO;

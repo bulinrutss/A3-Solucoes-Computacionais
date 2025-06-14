@@ -11,7 +11,7 @@ package com.projeto.controleestoque.view;
  * 
  * Os dados são carregados do banco de dados através do ProdutoDAO.
  * 
- * @author Ruts
+ * @author Marcos Antonio Gasperin
  */
 
 import com.projeto.controleestoque.dao.ProdutoDAO;

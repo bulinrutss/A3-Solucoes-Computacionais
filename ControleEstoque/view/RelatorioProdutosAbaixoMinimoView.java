@@ -12,7 +12,7 @@ import java.util.List;
  * Exibe uma tabela com todos os produtos cujo estoque está abaixo da quantidade mínima definida.
  * Os dados são carregados do banco de dados através do ProdutoDAO.
  * 
- * @author Ruts
+ * @author Marcos Antonio Gasperin
  */
 public class RelatorioProdutosAbaixoMinimoView  {
 

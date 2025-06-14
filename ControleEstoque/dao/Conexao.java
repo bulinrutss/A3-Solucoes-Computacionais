@@ -10,7 +10,7 @@ package com.projeto.controleestoque.dao;
  * 
  * Métodos utilitários para obter uma instância de Connection.
  * 
- * @author Ruts
+ * @author Marcos Antonio Gasperin
  */
 import java.sql.Connection;
 import java.sql.DriverManager;

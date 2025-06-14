@@ -9,7 +9,7 @@ package com.projeto.controleestoque.view;
  * Exibe uma tabela com a quantidade de produtos cadastrados em cada categoria.
  * Os dados são carregados do banco de dados através do ProdutoDAO.
  * 
- * @author Ruts
+ * @author Marcos Antonio Gasperin
  */
 
 import com.projeto.controleestoque.dao.ProdutoDAO;

@@ -11,7 +11,7 @@ package com.projeto.controleestoque.view;
  * 
  * Também fornece método utilitário para verificar se uma categoria possui produtos vinculados.
  * 
- * @author Ruts
+ * @author Marcos Antonio Gasperin
  */
 
 import javax.swing.*;

@@ -9,7 +9,7 @@ package com.projeto.controleestoque.view;
  * Exibe uma tabela com todos os produtos cadastrados, mostrando nome, preço unitário, unidade e categoria.
  * Os dados são carregados do banco de dados através do ProdutoDAO.
  * 
- * @author Ruts
+ * @author Marcos Antonio Gasperin
  */
 
 import com.projeto.controleestoque.dao.ProdutoDAO;

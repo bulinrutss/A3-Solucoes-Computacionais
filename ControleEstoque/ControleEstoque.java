@@ -13,7 +13,7 @@ import javax.swing.SwingUtilities;
  * 
  * O método main utiliza SwingUtilities para garantir que a interface seja criada na thread de eventos do Swing.
  * 
- * @author Ruts
+ * @author Marcos Antonio Gasperin
  */
 public class ControleEstoque {
 
