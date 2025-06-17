@@ -97,15 +97,24 @@ public class MenuPrincipal extends JFrame {
      */
     public static boolean categoriaTemProdutos(int categoriaId) {
         String sql = "SELECT COUNT(*) FROM produto WHERE categoria_id = ?";
-        try (Connection conn = Conexao.getConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConexao();
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, categoriaId);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                return rs.getInt(1) > 0;
+                boolean temProdutos = rs.getInt(1) > 0;
+                rs.close();
+                stmt.close();
+                return temProdutos;
             }
+            rs.close();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            conexao.fecharConexao();
         }
         return false;
     }

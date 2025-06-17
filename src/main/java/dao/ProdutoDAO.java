@@ -22,7 +22,10 @@ public class ProdutoDAO {
     public void inserir(Produto produto) {
         String sql = "INSERT INTO produto (nome, preco_unitario, unidade, quantidade_estoque, quantidade_minima, quantidade_maxima, categoria_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-        try (Connection conn = Conexao.getConexao(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConexao();
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, produto.getNome());
             stmt.setDouble(2, produto.getPrecoUnitario());
             stmt.setString(3, produto.getUnidade());
@@ -31,8 +34,11 @@ public class ProdutoDAO {
             stmt.setInt(6, produto.getQuantidadeMaxima());
             stmt.setInt(7, produto.getCategoria().getId());
             stmt.executeUpdate();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            conexao.fecharConexao();
         }
     }
 
@@ -44,7 +50,10 @@ public class ProdutoDAO {
     public void atualizar(Produto produto) {
         String sql = "UPDATE produto SET nome=?, preco_unitario=?, unidade=?, quantidade_estoque=?, quantidade_minima=?, quantidade_maxima=?, categoria_id=? WHERE id=?";
 
-        try (Connection conn = Conexao.getConexao(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConexao();
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, produto.getNome());
             stmt.setDouble(2, produto.getPrecoUnitario());
             stmt.setString(3, produto.getUnidade());
@@ -54,8 +63,11 @@ public class ProdutoDAO {
             stmt.setInt(7, produto.getCategoria().getId());
             stmt.setInt(8, produto.getId());
             stmt.executeUpdate();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            conexao.fecharConexao();
         }
     }
 
@@ -67,11 +79,17 @@ public class ProdutoDAO {
     public void excluir(int id) {
         String sql = "DELETE FROM produto WHERE id=?";
 
-        try (Connection conn = Conexao.getConexao(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConexao();
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            conexao.fecharConexao();
         }
     }
 
@@ -83,37 +101,45 @@ public class ProdutoDAO {
     public List<Produto> listarTodos() {
         List<Produto> lista = new ArrayList<>();
         String sql = "SELECT p.*, c.id AS cid, c.nome AS cnome, c.tamanho, c.embalagem "
-           + "FROM produto p "
-           + "JOIN categoria c ON p.categoria_id = c.id "
-           + "ORDER BY p.nome";
+                + "FROM produto p "
+                + "JOIN categoria c ON p.categoria_id = c.id "
+                + "ORDER BY p.nome";
 
-        try (Connection conn = Conexao.getConexao(); Statement stmt = conn.createStatement()) {
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConexao();
+            Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
+
             while (rs.next()) {
                 Categoria cat = new Categoria(
-                    rs.getInt("cid"),
-                    rs.getString("cnome"),
-                    rs.getString("tamanho"),
-                    rs.getString("embalagem")
+                        rs.getInt("cid"),
+                        rs.getString("cnome"),
+                        rs.getString("tamanho"),
+                        rs.getString("embalagem")
                 );
 
                 Produto p = new Produto(
-                    rs.getInt("id"),
-                    rs.getString("nome"),
-                    rs.getDouble("preco_unitario"),
-                    rs.getString("unidade"),
-                    rs.getInt("quantidade_estoque"),
-                    rs.getInt("quantidade_minima"),
-                    rs.getInt("quantidade_maxima"),
-                    cat
+                        rs.getInt("id"),
+                        rs.getString("nome"),
+                        rs.getDouble("preco_unitario"),
+                        rs.getString("unidade"),
+                        rs.getInt("quantidade_estoque"),
+                        rs.getInt("quantidade_minima"),
+                        rs.getInt("quantidade_maxima"),
+                        cat
                 );
                 lista.add(p);
             }
+
+            rs.close();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            conexao.fecharConexao();
         }
 
         return lista;
     }
 }
-

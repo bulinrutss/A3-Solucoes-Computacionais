@@ -1,10 +1,10 @@
 package dao;
 
 /**
- *
- * @author Douglas Pierri Beccari
+ * Classe responsável pelas operações CRUD da tabela categoria no banco de dados.
+ * 
+ * @author 
  */
-
 import modelo.Categoria;
 import java.sql.*;
 import java.util.ArrayList;
@@ -20,13 +20,19 @@ public class CategoriaDAO {
     public void inserir(Categoria categoria) {
         String sql = "INSERT INTO categoria (nome, tamanho, embalagem) VALUES (?, ?, ?)";
 
-        try (Connection conn = Conexao.getConexao(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConexao();
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, categoria.getNome());
             stmt.setString(2, categoria.getTamanho());
             stmt.setString(3, categoria.getEmbalagem());
             stmt.executeUpdate();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            conexao.fecharConexao();
         }
     }
 
@@ -38,14 +44,20 @@ public class CategoriaDAO {
     public void atualizar(Categoria categoria) {
         String sql = "UPDATE categoria SET nome=?, tamanho=?, embalagem=? WHERE id=?";
 
-        try (Connection conn = Conexao.getConexao(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConexao();
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, categoria.getNome());
             stmt.setString(2, categoria.getTamanho());
             stmt.setString(3, categoria.getEmbalagem());
             stmt.setInt(4, categoria.getId());
             stmt.executeUpdate();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            conexao.fecharConexao();
         }
     }
 
@@ -57,11 +69,17 @@ public class CategoriaDAO {
     public void excluir(int id) {
         String sql = "DELETE FROM categoria WHERE id=?";
 
-        try (Connection conn = Conexao.getConexao(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConexao();
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            conexao.fecharConexao();
         }
     }
 
@@ -75,7 +93,10 @@ public class CategoriaDAO {
         String sql = "SELECT * FROM categoria WHERE id=?";
         Categoria categoria = null;
 
-        try (Connection conn = Conexao.getConexao(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConexao();
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
 
@@ -86,8 +107,13 @@ public class CategoriaDAO {
                 categoria.setTamanho(rs.getString("tamanho"));
                 categoria.setEmbalagem(rs.getString("embalagem"));
             }
+
+            rs.close();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            conexao.fecharConexao();
         }
 
         return categoria;
@@ -102,8 +128,12 @@ public class CategoriaDAO {
         String sql = "SELECT * FROM categoria ORDER BY nome";
         List<Categoria> lista = new ArrayList<>();
 
-        try (Connection conn = Conexao.getConexao(); Statement stmt = conn.createStatement()) {
+        Conexao conexao = new Conexao();
+        try {
+            Connection conn = conexao.getConexao();
+            Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
+
             while (rs.next()) {
                 Categoria categoria = new Categoria();
                 categoria.setId(rs.getInt("id"));
@@ -112,11 +142,15 @@ public class CategoriaDAO {
                 categoria.setEmbalagem(rs.getString("embalagem"));
                 lista.add(categoria);
             }
+
+            rs.close();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            conexao.fecharConexao();
         }
 
         return lista;
     }
 }
-
