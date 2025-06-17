@@ -51,33 +51,33 @@ Foi desenvolvido como atividade prática da disciplina **Programação de Soluç
 
 
 ### 🔸 Cadastro de Categorias
-![Cadastro de Categorias](./Categorias.png)
+![Cadastro de Categorias](./exemplos/Categorias.png)
 
 ### 🔸 Cadastro de Produtos
-![Cadastro de Produtos](./Produtos.png)
+![Cadastro de Produtos](./exemplos/Produtos.png)
 
 ### 🔸 Movimentação de Estoque
-![Movimentação de Estoque](./Movimentar%20Estoque.png)
+![Movimentação de Estoque](./exemplos/Movimentar%20Estoque.png)
 
 ### 🔸 Histórico de Movimentações
-![Histórico de Movimentações](./Hist%C3%B3rico%20de%20Movimenta%C3%A7%C3%A3o.png)
+![Histórico de Movimentações](./exemplos/Hist%C3%B3rico%20de%20Movimenta%C3%A7%C3%A3o.png)
 
 ## 📊 Relatórios Gerados
 
 ### 📑 Lista de Preços
-![Relatório Lista de Preços](./Relat%C3%B3rio%20Lista%20de%20Pre%C3%A7os.png)
+![Relatório Lista de Preços](./exemplos/Relat%C3%B3rio%20Lista%20de%20Pre%C3%A7os.png)
 
 ### 📑 Balanço Financeiro
-![Relatório Balanço Financeiro](./Relat%C3%B3rio%20Balan%C3%A7o%20Financeiro.png)
+![Relatório Balanço Financeiro](./exemplos/Relat%C3%B3rio%20Balan%C3%A7o%20Financeiro.png)
 
 ### 📑 Produtos Abaixo do Mínimo
-![Relatório Abaixo do Mínimo](./Relat%C3%B3rio%20Abaixo%20do%20M%C3%ADnimo.png)
+![Relatório Abaixo do Mínimo](./exemplos/Relat%C3%B3rio%20Abaixo%20do%20M%C3%ADnimo.png)
 
 ### 📑 Produtos Acima do Máximo
-![Relatório Acima do Máximo](./Relat%C3%B3rio%20Acima%20do%20M%C3%A1ximo.png)
+![Relatório Acima do Máximo](./exemplos/Relat%C3%B3rio%20Acima%20do%20M%C3%A1ximo.png)
 
 ### 📑 Produtos por Categoria
-![Relatório Categorias](./Relat%C3%B3rio%20Categorias.png)
+![Relatório Categorias](./exemplos/Relat%C3%B3rio%20Categorias.png)
 
 ## 📚 Fontes
 - UNISUL – Manual de Metodologia Acadêmica.
