@@ -1,7 +1,7 @@
-package com.projeto.controleestoque.dao;
+package dao;
 
-import com.projeto.controleestoque.modelo.Movimentacao;
-import com.projeto.controleestoque.modelo.Produto;
+import modelo.Movimentacao;
+import modelo.Produto;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.projeto.controleestoque.view;
+package visao;
 
 /**
  * Tela de relatório de produtos por categoria.
@@ -12,8 +8,8 @@ package com.projeto.controleestoque.view;
  * @author Marcos Antonio Gasperin
  */
 
-import com.projeto.controleestoque.dao.ProdutoDAO;
-import com.projeto.controleestoque.modelo.Produto;
+import dao.ProdutoDAO;
+import modelo.Produto;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -21,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class RelatorioProdutosPorCategoriaView {
+public class RelatorioProdutosPorCategoriaVisao {
 
     private JPanel panel;
     private JTable tabela;
@@ -31,7 +27,7 @@ public class RelatorioProdutosPorCategoriaView {
      * Construtor da tela de relatório de produtos por categoria.
      * Inicializa os componentes gráficos e carrega os dados da tabela.
      */
-    public RelatorioProdutosPorCategoriaView() {
+    public RelatorioProdutosPorCategoriaVisao() {
         panel = new JPanel();
         panel.setLayout(null);
 

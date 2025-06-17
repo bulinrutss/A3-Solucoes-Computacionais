@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.projeto.controleestoque.view;
+package visao;
 
 /**
  * Tela de cadastro e manutenção de categorias.
@@ -15,8 +11,8 @@ package com.projeto.controleestoque.view;
  * @author Douglas Pierri Beccari
  */
 
-import com.projeto.controleestoque.dao.CategoriaDAO;
-import com.projeto.controleestoque.modelo.Categoria;
+import dao.CategoriaDAO;
+import modelo.Categoria;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -24,7 +20,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
-public class CategoriaView {
+public class CategoriaVisao {
 
     private JPanel panel;
     private JTextField txtNome;
@@ -37,7 +33,7 @@ public class CategoriaView {
      * Construtor da tela de categorias.
      * Inicializa os componentes gráficos, listeners e carrega os dados da tabela.
      */
-    public CategoriaView() {
+    public CategoriaVisao() {
         panel = new JPanel();
         panel.setLayout(null);
 

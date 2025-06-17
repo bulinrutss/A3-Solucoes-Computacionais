@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.projeto.controleestoque.view;
+package visao;
 
 /**
  * Tela principal do sistema de Controle de Estoque.
@@ -21,7 +17,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.projeto.controleestoque.dao.Conexao;
+import dao.Conexao;
 
 public class MenuPrincipal extends JFrame {
 
@@ -70,15 +66,15 @@ public class MenuPrincipal extends JFrame {
 
         add(split);
 
-        btnCategoria.addActionListener(e -> mostrarPainel(new CategoriaView().getContentPanel()));
-        btnProduto.addActionListener(e -> mostrarPainel(new ProdutoView().getContentPanel()));
-        btnMovimentacao.addActionListener(e -> mostrarPainel(new MovimentacaoView().getContentPanel()));
-        btnHistorico.addActionListener(e -> mostrarPainel(new HistoricoMovimentacaoView().getContentPanel()));
-        btnRel1.addActionListener(e -> mostrarPainel(new RelatorioListaDePrecosView().getContentPanel()));
-        btnRel2.addActionListener(e -> mostrarPainel(new RelatorioBalancoFinanceiroView().getContentPanel()));
-        btnRel3.addActionListener(e -> mostrarPainel(new RelatorioProdutosAbaixoMinimoView().getContentPanel()));
-        btnRel4.addActionListener(e -> mostrarPainel(new RelatorioProdutosAcimaMaximoView().getContentPanel()));
-        btnRel5.addActionListener(e -> mostrarPainel(new RelatorioProdutosPorCategoriaView().getContentPanel()));
+        btnCategoria.addActionListener(e -> mostrarPainel(new CategoriaVisao().getContentPanel()));
+        btnProduto.addActionListener(e -> mostrarPainel(new ProdutoVisao().getContentPanel()));
+        btnMovimentacao.addActionListener(e -> mostrarPainel(new MovimentacaoVisao().getContentPanel()));
+        btnHistorico.addActionListener(e -> mostrarPainel(new HistoricoMovimentacaoVisao().getContentPanel()));
+        btnRel1.addActionListener(e -> mostrarPainel(new RelatorioListaDePrecosVisao().getContentPanel()));
+        btnRel2.addActionListener(e -> mostrarPainel(new RelatorioBalancoFinanceiroVisao().getContentPanel()));
+        btnRel3.addActionListener(e -> mostrarPainel(new RelatorioProdutosAbaixoMinimoVisao().getContentPanel()));
+        btnRel4.addActionListener(e -> mostrarPainel(new RelatorioProdutosAcimaMaximoVisao().getContentPanel()));
+        btnRel5.addActionListener(e -> mostrarPainel(new RelatorioProdutosPorCategoriaVisao().getContentPanel()));
     }
 
     /**

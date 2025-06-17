@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.projeto.controleestoque.view;
+package visao;
 
 /**
  * Tela de cadastro e manutenção de produtos.
@@ -15,10 +11,10 @@ package com.projeto.controleestoque.view;
  * @author João Vitor Cardoso de Jesus
  */
 
-import com.projeto.controleestoque.dao.CategoriaDAO;
-import com.projeto.controleestoque.dao.ProdutoDAO;
-import com.projeto.controleestoque.modelo.Categoria;
-import com.projeto.controleestoque.modelo.Produto;
+import dao.CategoriaDAO;
+import dao.ProdutoDAO;
+import modelo.Categoria;
+import modelo.Produto;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -26,7 +22,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
-public class ProdutoView {
+public class ProdutoVisao {
 
     private JPanel panel;
     private JTextField txtNome, txtPreco, txtUnidade, txtQtd, txtMin, txtMax;
@@ -38,7 +34,7 @@ public class ProdutoView {
      * Construtor da tela de produtos.
      * Inicializa os componentes gráficos, listeners e carrega os dados da tabela e categorias.
      */
-    public ProdutoView() {
+    public ProdutoVisao() {
         panel = new JPanel();
         panel.setLayout(null);
 

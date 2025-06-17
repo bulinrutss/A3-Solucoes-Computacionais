@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.projeto.controleestoque.view;
+package visao;
 
 /**
  * Tela de movimentação de estoque.
@@ -14,15 +10,15 @@ package com.projeto.controleestoque.view;
  * @author Kaike Augusto Dias dos Santos
  */
 
-import com.projeto.controleestoque.dao.MovimentacaoDAO;
-import com.projeto.controleestoque.dao.ProdutoDAO;
-import com.projeto.controleestoque.modelo.Movimentacao;
-import com.projeto.controleestoque.modelo.Produto;
+import dao.MovimentacaoDAO;
+import dao.ProdutoDAO;
+import modelo.Movimentacao;
+import modelo.Produto;
 
 import javax.swing.*;
 import java.util.List;
 
-public class MovimentacaoView {
+public class MovimentacaoVisao {
 
     private JPanel panel;
     private JComboBox<Produto> comboProduto;
@@ -32,7 +28,7 @@ public class MovimentacaoView {
      * Construtor da tela de movimentação.
      * Inicializa os componentes gráficos, listeners e carrega a lista de produtos.
      */
-    public MovimentacaoView() {
+    public MovimentacaoVisao() {
         panel = new JPanel();
         panel.setLayout(null);
 

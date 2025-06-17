@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.projeto.controleestoque.view;
+package visao;
 
 /**
  * Tela de histórico de movimentações de produtos.
@@ -12,15 +8,15 @@ package com.projeto.controleestoque.view;
  * @author Kaike Augusto Dias dos Santos
  */
 
-import com.projeto.controleestoque.dao.MovimentacaoDAO;
-import com.projeto.controleestoque.modelo.Movimentacao;
+import dao.MovimentacaoDAO;
+import modelo.Movimentacao;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class HistoricoMovimentacaoView {
+public class HistoricoMovimentacaoVisao {
 
     private JPanel panel;
     private JTable tabela;
@@ -30,7 +26,7 @@ public class HistoricoMovimentacaoView {
      * Construtor da tela de histórico de movimentações.
      * Inicializa os componentes gráficos e carrega os dados da tabela.
      */
-    public HistoricoMovimentacaoView() {
+    public HistoricoMovimentacaoVisao() {
         panel = new JPanel();
         panel.setLayout(null);
 
