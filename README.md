@@ -1,4 +1,3 @@
-
 # 📦 Sistema de Controle de Estoque
 
 ## 👨‍💻 Integrantes do Projeto
@@ -47,6 +46,38 @@ Foi desenvolvido como atividade prática da disciplina **Programação de Soluç
 - RNF03 – A interface deve ser desktop, utilizando Swing.
 - RNF04 – O sistema deve ter fácil usabilidade e ser leve.
 - RNF05 – O controle de versão deve ser feito no GitHub.
+
+## 🖥️ Telas do Sistema
+
+
+### 🔸 Cadastro de Categorias
+![Cadastro de Categorias](./Categorias.png)
+
+### 🔸 Cadastro de Produtos
+![Cadastro de Produtos](./Produtos.png)
+
+### 🔸 Movimentação de Estoque
+![Movimentação de Estoque](./Movimentar%20Estoque.png)
+
+### 🔸 Histórico de Movimentações
+![Histórico de Movimentações](./Hist%C3%B3rico%20de%20Movimenta%C3%A7%C3%A3o.png)
+
+## 📊 Relatórios Gerados
+
+### 📑 Lista de Preços
+![Relatório Lista de Preços](./Relat%C3%B3rio%20Lista%20de%20Pre%C3%A7os.png)
+
+### 📑 Balanço Financeiro
+![Relatório Balanço Financeiro](./Relat%C3%B3rio%20Balan%C3%A7o%20Financeiro.png)
+
+### 📑 Produtos Abaixo do Mínimo
+![Relatório Abaixo do Mínimo](./Relat%C3%B3rio%20Abaixo%20do%20M%C3%ADnimo.png)
+
+### 📑 Produtos Acima do Máximo
+![Relatório Acima do Máximo](./Relat%C3%B3rio%20Acima%20do%20M%C3%A1ximo.png)
+
+### 📑 Produtos por Categoria
+![Relatório Categorias](./Relat%C3%B3rio%20Categorias.png)
 
 ## 📚 Fontes
 - UNISUL – Manual de Metodologia Acadêmica.
